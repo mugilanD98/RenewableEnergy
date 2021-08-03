@@ -116,7 +116,7 @@ line_fig.update_layout(xaxis_title = 'Report Date', yaxis_title = 'Energy (MU)')
 st.write(line_fig)
 
 
-st.markdown('''<p><h2>State/ Region Level - Daily Renewalble Energy Generation ('''+report_date_format+')'+'''</h2></p>''', unsafe_allow_html=True)
+st.markdown('''<p><h2>State/ Region Level - Daily Renewalble Energy Generation ('''+str(report_date_format)+')'+'''</h2></p>''', unsafe_allow_html=True)
 
 host_source = st.selectbox('Select EnergySource:',('Wind Energy', 'Solar Energy', 'Other Renewable Energy', 'Total Renewable Energy'))
 st.write('You selected:', host_source)
@@ -142,7 +142,7 @@ reg_bar_fig.update_layout(xaxis_title = host_source + ' (MU)', yaxis_title = 'Re
 st.write(reg_bar_fig)
 
 
-st.markdown('''<p><h2>State/ Sector Level Vs Capacity/ Generation - ISGS ('''+report_date_format+')'+'''</h2></p>''', unsafe_allow_html=True)
+st.markdown('''<p><h2>State/ Sector Level Vs Capacity/ Generation - ISGS ('''+str(report_date_format)+')'+'''</h2></p>''', unsafe_allow_html=True)
 
 host_isgs_source = st.selectbox('Select Capacity/ Generation:',('Installed Capacity', 'Actual Capacity'))
 st.write('You selected:', host_isgs_source)
