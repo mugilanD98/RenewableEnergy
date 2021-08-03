@@ -29,7 +29,9 @@ co2 = overall_summary_df.loc[0, 'co']
 
 report_date = overall_summary_df.loc[0, 'report_date']
 
-report_date_format = overall_summary_df.loc[0, 'report_date_format']
+latest_report_date_df = pd.read_sql('SELECT max(report_date) as report_date FROM energy_state_level', con=db_connection)
+
+report_date_format = latest_report_date_df.loc[0, 'report_date']
 
 latest_sw_df = pd.read_sql('SELECT * FROM energy_state_level WHERE lower(state) like "all india" and report_date = "'+str(report_date_format)+'"', con=db_connection)
 
