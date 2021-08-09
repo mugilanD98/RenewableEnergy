@@ -52,7 +52,8 @@ wind_perc = latest_sw_df.loc[0, 'wind']*100/ latest_sw_df.loc[0, 'total']
 wind_perc = str(round(wind_perc,1)) + '%'
 
 st.markdown('''
-            <p><h1>Dialy Renewable Energy Generation - Monitoring Dashboard</h1></p>
+            <p><h1>Daily Renewable Energy Generation - Monitoring Dashboard</h1><br>
+            <h3>All India - RE Generation Summary</h3></p>
             <div style="height:150px;width: 30%;background-color: #d1f0a2; float:left; left: 0px; border-radius: 2px;">
                     <div>
                         <div style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 30px; padding: 20px 0px 0px 25px;">'''+str(co2)+''' <span style="font-size: 15px; font-weight: normal">tCO<sub>2</sub></span> </div>
