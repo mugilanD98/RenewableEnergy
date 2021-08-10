@@ -23,7 +23,7 @@ db_connection = create_engine(db_connection_str)
 
 #For Overall Summary - 3 Cards
 
-overall_summary_df = pd.read_sql('SELECT * FROM daily_overall_summary', con=db_connection)
+overall_summary_df = pd.read_sql('SELECT * FROM daily_overall_summary_1', con=db_connection)
 
 co2 = overall_summary_df.loc[0, 'co']
 
@@ -51,9 +51,17 @@ wind_perc = latest_sw_df.loc[0, 'wind']*100/ latest_sw_df.loc[0, 'total']
 
 wind_perc = str(round(wind_perc,1)) + '%'
 
+
+
+
 st.markdown('''
             <p><h1>Daily Renewable Energy Generation - Monitoring Dashboard</h1><br>
-            <h3>All India - RE Generation Summary</h3></p>
+            <h3>All India - RE Generation Summary</h3></p>     ''' , unsafe_allow_html=True);
+            
+host_source = st.selectbox('Select EnergySource:',('Wind Energy', 'Solar Energy', 'Other Renewable Energy', 'Total Renewable Energy'))
+st.write('You selected:', host_source)            
+            
+st.markdown('''            
             <div style="height:150px;width: 30%;background-color: #d1f0a2; float:left; left: 0px; border-radius: 2px;">
                     <div>
                         <div style="font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 30px; padding: 20px 0px 0px 25px;">'''+str(co2)+''' <span style="font-size: 15px; font-weight: normal">tCO<sub>2</sub></span> </div>
