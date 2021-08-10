@@ -31,21 +31,21 @@ report_date_format = latest_report_date_df.loc[0, 'report_date']
 
 latest_sw_df = pd.read_sql('SELECT * FROM energy_state_level WHERE lower(state) like "all india" and report_date = "'+str(report_date_format)+'"', con=db_connection)
 
-solar_number = latest_sw_df.loc[0, 'solar']
+# solar_number = latest_sw_df.loc[0, 'solar']
 
-solar_number = round(solar_number,1)
+# solar_number = round(solar_number,1)
 
-wind_number = latest_sw_df.loc[0, 'wind']
+# wind_number = latest_sw_df.loc[0, 'wind']
 
-wind_number = round(wind_number,1)
+# wind_number = round(wind_number,1)
 
-solar_perc = latest_sw_df.loc[0, 'solar']*100/ latest_sw_df.loc[0, 'total']
+# solar_perc = latest_sw_df.loc[0, 'solar']*100/ latest_sw_df.loc[0, 'total']
 
-solar_perc = str(round(solar_perc,1)) + '%'
+# solar_perc = str(round(solar_perc,1)) + '%'
 
-wind_perc = latest_sw_df.loc[0, 'wind']*100/ latest_sw_df.loc[0, 'total']
+# wind_perc = latest_sw_df.loc[0, 'wind']*100/ latest_sw_df.loc[0, 'total']
 
-wind_perc = str(round(wind_perc,1)) + '%'
+# wind_perc = str(round(wind_perc,1)) + '%'
 
 st.markdown('''
             <p><h1>Daily Renewable Energy Generation - Monitoring Dashboard</h1><br>
@@ -58,9 +58,23 @@ sr_list = list(overall_summary_df['state'])
 sr = st.selectbox('Select State/ Region:', sr_list)
 st.write('You selected:', sr)
 
-co2 = overall_summary_df.loc[0, 'co']
 
-report_date = overall_summary_df.loc[0, 'report_date']
+co2 = overall_summary_df[overall_summary_df['state'] == sr, 'co']
+
+report_date = overall_summary_df[overall_summary_df['state'] == sr, 'report_date']
+
+solar_number = overall_summary_df[overall_summary_df['state'] == sr, 'solar']
+
+solar_number = solar_number.split()[0]
+
+wind_number = overall_summary_df[overall_summary_df['state'] == sr, 'wind']
+
+wind_number = wind_number.split()[0]
+
+solar_perc = overall_summary_df[overall_summary_df['state'] == sr, 'solar_perc']
+
+wind_perc = overall_summary_df[overall_summary_df['state'] == sr, 'wind_perc']
+
             
 st.markdown('''            
             <div style="height:150px;width: 30%;background-color: #d1f0a2; float:left; left: 0px; border-radius: 2px;">
