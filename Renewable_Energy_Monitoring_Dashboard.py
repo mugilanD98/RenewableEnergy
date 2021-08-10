@@ -49,7 +49,7 @@ latest_sw_df = pd.read_sql('SELECT * FROM energy_state_level WHERE lower(state) 
 
 st.markdown('''
             <p><h1>Daily Renewable Energy Generation - Monitoring Dashboard</h1><br>
-            <h3>All India - RE Generation Summary</h3></p>
+            <h3>Renewable Energy Generation Summary</h3></p>
     ''' , unsafe_allow_html=True);            
 
 
