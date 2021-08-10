@@ -168,3 +168,11 @@ sector_isgs_bar_fig = px.bar(sector_isgs_df, x=host_isgs_source,y='Sector', colo
 sector_isgs_bar_fig.update_layout(xaxis_title = host_isgs_source + ' (MU)', yaxis_title = 'Sector')
 
 st.write(sector_isgs_bar_fig)
+
+latest_rep_download_df = pd.read_sql('SELECT report_date, report_link FROM lastest_report_link', con=db_connection)
+
+latest_report_link = latest_rep_download_df.loc[0, 'report_link']
+
+latest_report_date = latest_rep_download_df.loc[0, 'report_date']
+
+st.markdown('''<p><h2>Download latest Renewable Eneregy Generation Report ('''+str(latest_report_date)+')'+'''</h2></p><a href="'''+latest_report_link+'''> Download Excel Report </a>''', unsafe_allow_html=True)
