@@ -175,4 +175,4 @@ latest_report_link = latest_rep_download_df.loc[0, 'report_link']
 
 latest_report_date = latest_rep_download_df.loc[0, 'report_date']
 
-st.markdown('''<p><h2>Download latest Renewable Eneregy Generation Report ('''+str(latest_report_date)+')'+'''</h2></p><a href="'''+latest_report_link+'''> Download Excel Report </a>''', unsafe_allow_html=True)
+st.markdown('''<p><h2>Download latest Renewable Eneregy Generation Report ('''+str(latest_report_date)+')'+'''</h2></p><a href="'''+latest_report_link+'''"> Download Excel Report </a>''', unsafe_allow_html=True)
