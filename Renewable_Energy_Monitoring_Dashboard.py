@@ -117,7 +117,7 @@ line_fig.update_layout(xaxis_title = 'Report Date', yaxis_title = 'Energy (MU)')
 st.write(line_fig)
 
 
-st.markdown('''<p><h2>State/ Region Level - Daily Renewalble Energy Generation ('''+str(report_date_format)+')'+'''</h2></p>''', unsafe_allow_html=True)
+st.markdown('''<p><h2>State/ Region Level - Daily Renewable Energy Generation ('''+str(report_date_format)+')'+'''</h2></p>''', unsafe_allow_html=True)
 
 host_source = st.selectbox('Select EnergySource:',('Wind Energy', 'Solar Energy', 'Other Renewable Energy', 'Total Renewable Energy'))
 st.write('You selected:', host_source)
