@@ -59,21 +59,21 @@ sr = st.selectbox('Select State/ Region:', sr_list)
 st.write('You selected:', sr)
 
 
-co2 = overall_summary_df.loc[overall_summary_df['state'] == sr, 'co']
+co2 = overall_summary_df.loc[overall_summary_df['state'] == sr, 'co'][0]
 
-report_date = overall_summary_df.loc[overall_summary_df['state'] == sr, 'report_date']
+report_date = overall_summary_df.loc[overall_summary_df['state'] == sr, 'report_date'][0]
 
-solar_number = overall_summary_df.loc[overall_summary_df['state'] == sr, 'solar']
+solar_number = overall_summary_df.loc[overall_summary_df['state'] == sr, 'solar'][0]
 
 solar_number = solar_number.split()[0]
 
-wind_number = overall_summary_df.loc[overall_summary_df['state'] == sr, 'wind']
+wind_number = overall_summary_df.loc[overall_summary_df['state'] == sr, 'wind'][0]
 
 wind_number = wind_number.split()[0]
 
-solar_perc = overall_summary_df.loc[overall_summary_df['state'] == sr, 'solar_perc']
+solar_perc = overall_summary_df.loc[overall_summary_df['state'] == sr, 'solar_perc'][0]
 
-wind_perc = overall_summary_df.loc[overall_summary_df['state'] == sr, 'wind_perc']
+wind_perc = overall_summary_df.loc[overall_summary_df['state'] == sr, 'wind_perc'][0]
 
             
 st.markdown('''            
