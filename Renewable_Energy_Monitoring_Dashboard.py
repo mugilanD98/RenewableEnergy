@@ -23,11 +23,7 @@ db_connection = create_engine(db_connection_str)
 
 #For Overall Summary - 3 Cards
 
-overall_summary_df = pd.read_sql('SELECT * FROM daily_overall_summary', con=db_connection)
-
-co2 = overall_summary_df.loc[0, 'co']
-
-report_date = overall_summary_df.loc[0, 'report_date']
+overall_summary_df = pd.read_sql('SELECT * FROM daily_overall_summary_1', con=db_connection)
 
 latest_report_date_df = pd.read_sql('SELECT max(report_date) as report_date FROM energy_state_level', con=db_connection)
 
@@ -55,6 +51,16 @@ st.markdown('''
             <p><h1>Daily Renewable Energy Generation - Monitoring Dashboard</h1><br>
             <h3>All India - RE Generation Summary</h3></p>
     ''' , unsafe_allow_html=True);            
+
+
+sr_list = list(overall_summary_df['state'])
+
+sr = st.selectbox('Select State/ Region:', sr_list)
+st.write('You selected:', sr)
+
+co2 = overall_summary_df.loc[0, 'co']
+
+report_date = overall_summary_df.loc[0, 'report_date']
             
 st.markdown('''            
             <div style="height:150px;width: 30%;background-color: #d1f0a2; float:left; left: 0px; border-radius: 2px;">
