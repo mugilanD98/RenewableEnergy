@@ -63,7 +63,7 @@ overall_summary_filter_df = overall_summary_df[overall_summary_df['state'] == sr
 
 co2 = overall_summary_filter_df['co'][0]
 
-report_date = overall_summary_df.loc[overall_summary_df['state'] == sr, 'report_date'][0]
+report_date = overall_summary_filter_df['report_date'][0]
 
 solar_number = overall_summary_filter_df['solar'][0]
 
