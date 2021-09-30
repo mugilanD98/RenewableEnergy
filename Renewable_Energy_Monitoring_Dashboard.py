@@ -23,7 +23,7 @@ db_connection = create_engine(db_connection_str)
 
 #For Overall Summary - 3 Cards
 
-overall_summary_df = pd.read_sql('SELECT * FROM daily_overall_summary_1', con=db_connection)
+overall_summary_df = pd.read_sql('SELECT * FROM daily_overall_summary_2', con=db_connection)
 
 latest_report_date_df = pd.read_sql('SELECT max(report_date) as report_date FROM energy_state_level', con=db_connection)
 
