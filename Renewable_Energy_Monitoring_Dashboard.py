@@ -18,7 +18,7 @@ from dateutil.relativedelta import relativedelta
 # Set Min Date
 min_dt = (date.today() - relativedelta(months=1)).strftime("%Y-%m-01")
 
-db_connection_str = 'mysql+pymysql://admin:VRhmqZPY@mysql-41080-0.cloudclusters.net:18738/energy'
+db_connection_str = 'mysql+pymysql://admin:D4lWotxO@mysql-52528-0.cloudclusters.net:17520/energy'
 db_connection = create_engine(db_connection_str)
 
 #For Overall Summary - 3 Cards
